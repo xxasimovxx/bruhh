@@ -22,15 +22,7 @@ class ListPage extends StatelessWidget {
     return AppBar(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          SizedBox(
-            width: 50,
-            height: 50,
-            child: ClipOval(
-              child: Image.asset("images/image.jpg"),
-            ),
-          ),
-        ],
+        children: [],
       ),
     );
   }

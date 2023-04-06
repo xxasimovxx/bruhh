@@ -1,6 +1,9 @@
 import 'package:expenses/animation_widget/animated_circle.dart';
 import 'package:expenses/pages/ListPage.dart';
+import 'package:expenses/widgets/nice_icon.dart';
 import 'package:flutter/material.dart';
+
+import 'ProfilePage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,61 +30,9 @@ class HomePage extends StatelessWidget {
     return AppBar(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SizedBox(
-            width: 60,
-            height: 60,
-            child: Card(
-              color: theme.accentColor,
-              elevation: 4.0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(11.0),
-                  side: const BorderSide(width: 1.5, color: Colors.black)),
-              child: Center(
-                child: IconButton(
-                    padding: const EdgeInsets.all(1),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ListPage(),
-                          ));
-                    },
-                    icon: Icon(
-                      Icons.architecture_sharp,
-                      size: 30,
-                      color: theme.primaryColor,
-                    )),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 60,
-            height: 60,
-            child: Card(
-              color: theme.accentColor,
-              elevation: 4.0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(11.0),
-                  side: const BorderSide(width: 1.5, color: Colors.black)),
-              child: Center(
-                child: IconButton(
-                    padding: const EdgeInsets.all(1),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ListPage(),
-                          ));
-                    },
-                    icon: Icon(
-                      Icons.person,
-                      size: 30,
-                      color: theme.primaryColor,
-                    )),
-              ),
-            ),
-          ),
+        children: const [
+          NiceIcon(page: ListPage(), icon: Icons.architecture),
+          NiceIcon(page: ProfilePage(), icon: Icons.person)
         ],
       ),
     );
